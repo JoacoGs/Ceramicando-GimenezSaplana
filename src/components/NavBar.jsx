@@ -1,33 +1,31 @@
 import React from "react";
 import logo from "./images/logo.jpg";
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import NavDropdown from 'react-bootstrap/NavDropdown';
 
-const NavBar = () => {
-    return (
-        <div className="container">
-           <ul className="nav">
-                <li className="nav-item">
-                    <a className="nav-link active" aria-current="page" href="#"><img src={logo} width=""/></a>
-                </li>
-                <li className="nav-item">
-                    <a className="nav-link" href="#">Inicio</a>
-                </li>
-                <li className="nav-item dropdown">
-                    <a className="nav-link dropdown-toggle" href="#" target="blank" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Vajilla
-                    </a>
-                    <ul className="dropdown-menu" style="background-color: #b9936c;" aria-labelledby="navbarDropdownMenuLink">
-                        <li><a className="dropdown-item" href="#">Cuencos</a></li>
-                        <li><a className="dropdown-item" href="#">Bowls</a></li>
-                        <li><a className="dropdown-item" href="#">Tazas</a></li>              
-                        <li><a className="dropdown-item" href="#">Mates</a></li>
-                    </ul>
-                </li>
-                <li className="nav-item">
-                    <a className="nav-link ">Contacto</a>
-                </li>
-            </ul>  
-        </div>
-    )
-};
+function BasicExample() {
+  return (
+    <Navbar bg="light" expand="lg">
+      <Container>
+        <Navbar.Brand href="#home"><img src={logo} width="60" alt="Logo" /></Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="me-auto">
+            <Nav.Link href="#home">Incio</Nav.Link>
+            <Nav.Link href="#link">Contacto</Nav.Link>
+            <NavDropdown title="Vajilla" id="basic-nav-dropdown">
+              <NavDropdown.Item href="#action/3.1">Bowls    </NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.2">Cuencos</NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.3">Tazas</NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.4">Mates</NavDropdown.Item>
+            </NavDropdown>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
+  );
+}
 
-export default NavBar;
+export default BasicExample;
