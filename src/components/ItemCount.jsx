@@ -1,5 +1,5 @@
-import React from "react";
-import { useState } from "react";
+import React from 'react';
+import { useState } from 'react';
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 
@@ -28,10 +28,10 @@ const ItemCount = ({stock, initial, onAdd}) => {
         }
 
     return (
-        <div className="container py-5">
+        <div className="container py-2">
             <div className="row">
-                <div className="col-md-2">
-                    <p className="text-center">Nombre del Producto</p>
+                <div className="col-md-12">
+                    <p className="text-center"></p>
                     <InputGroup>
                     <input type="button" className="btn btn-secondary" value="-" onClick={() => {decrementarCantidad (cantidad - 1)}} />
                         <Form.Control type="text" value={cantidad} onChange={()=> {}} />
@@ -40,7 +40,7 @@ const ItemCount = ({stock, initial, onAdd}) => {
                     <div className="d-grid gap-2 pt-3">
                         <input type="button" className="btn btn-secondary" value="Agregar" onClick={() => {agregarProductos ()}} />
                     </div>
-                    <p>Productos Seleccionados: {itemAdd}</p>
+                    <p>Cantidad: {itemAdd}</p>
                 </div>   
             </div>     
         </div>   

@@ -1,7 +1,8 @@
 import "./App.css";
 import NavBar from "./components/NavBar";
-import ItemCount from "./components/ItemCount";
 import ItemListContainer from "./components/ItemListContainer";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import ItemDetailContainer from "./components/ItemDetailContainer";
 
 function App() {
   return (
@@ -9,7 +10,7 @@ function App() {
       <NavBar />
       <hr />
       <ItemListContainer />
-      <ItemCount stock={5} initial={1} onAdd={0} />
+      <ItemDetailContainer />
     </div>
   );
 }
