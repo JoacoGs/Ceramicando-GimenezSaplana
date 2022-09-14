@@ -1,12 +1,18 @@
 import React, { useEffect, useState } from "react";
-import {productos} from './productos';
+import { getProductosById } from "./customFetch";
 import ItemDetail from "./ItemDetail";
+import { useParams } from "react-router-dom";
 
 const ItemDetailContainer = () => {
-    const [item, setItem] = useState({})
+    const [item, setItemDetail] = useState({})
+
+    const {id} = useParams()
 
     useEffect(() =>{
-        const getProducto = () =>
+        getProductosById(id).then(response => {
+            setItemDetail(response)
+        })
+     /*    const getProducto = () =>
             new Promise ((res, rej)=>{
                 const producto = productos.find ((prod) => prod.id === 5)
                 setTimeout(() => {
@@ -20,8 +26,8 @@ const ItemDetailContainer = () => {
             })
             .catch((error)=>{
                 console.log(error)
-            })
-    }, [])
+            }) */
+    }, [id])
     return (
         <div style={{minHeight: '70vh'}}>
             <ItemDetail item={item} />

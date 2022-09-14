@@ -1,13 +1,16 @@
 import React from "react";
 import Card from 'react-bootstrap/Card';
 import ItemCount from "./ItemCount";
+import { Link } from "react-router-dom";
 
 
 const Item = ({id, nombre, imagen, precio}) => {
     return (
         <div className="col-md-4 py-3">
             <Card style={{ width: '18rem' }}>
-            <Card.Img variant="top" src={imagen} alt={nombre}/>
+            <Link to={`/producto/${id}`} className='userLink' >
+            <Card.Img variant="top" src={imagen} alt={nombre} />
+            </Link>
             <Card.Body>
             <Card.Title className="text-center"><b>{nombre}</b></Card.Title>
             <Card.Text className="text-center"> ${precio}</Card.Text>

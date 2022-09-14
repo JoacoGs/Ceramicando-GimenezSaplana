@@ -5,20 +5,22 @@ import bowlazul from "./images/bowlazul.jpg";
 import tazablanca from "./images/taza.jpg";
 import mategris from "./images/mate.jpg";
 
-export const productos = [
+const productos = [
     {
         id: 1,
         nombre: "Cuenco blanco",
         imagen: cuencoblanco,
         precio: 1500,
+        categoria: 'cuenco',
         stock: 10
     },
 
     {
-        IDBDatabase:2,
+        id:2,
         nombre: "Cuenco gris",
         imagen: cuencogris,
         precio: 2000,
+        categoria: 'cuenco',
         stock: 10
     },
 
@@ -27,6 +29,7 @@ export const productos = [
         nombre: "Bowl gris",
         imagen: bowlgris,
         precio: 1300,
+        categoria: 'bowl',
         stock: 10
     },
 
@@ -35,6 +38,7 @@ export const productos = [
         nombre: "Bowl azul",
         imagen: bowlazul,
         precio: 1300,
+        categoria: 'bowl',
         stock: 10
     },
 
@@ -43,6 +47,7 @@ export const productos = [
         nombre: "Taza blanca",
         imagen: tazablanca,
         precio: 700,
+        categoria: 'taza',
         stock: 10
     },
 
@@ -51,6 +56,9 @@ export const productos = [
         nombre: "Mate gris",
         imagen: mategris,
         precio: 800,
+        categoria: 'mate',
         stock: 10
     }  
 ];
+
+export default productos;

@@ -1,16 +1,18 @@
 import "./App.css";
+import { Routes, Route } from "react-router-dom";
 import NavBar from "./components/NavBar";
 import ItemListContainer from "./components/ItemListContainer";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ItemDetailContainer from "./components/ItemDetailContainer";
 
 function App() {
   return (
     <div className="container-fluid">
       <NavBar />
-      <hr />
-      <ItemListContainer />
-      <ItemDetailContainer />
+      <Routes>
+        <Route path="/productos" element={<ItemListContainer />} />
+        <Route path="/productos/:categoria" element={<ItemListContainer />} />
+        <Route path="/producto/:id" element={<ItemDetailContainer />} />
+      </Routes>
     </div>
   );
 }
