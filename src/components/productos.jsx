@@ -11,7 +11,7 @@ const productos = [
         nombre: "Cuenco blanco",
         imagen: cuencoblanco,
         precio: 1500,
-        categoria: 'cuenco',
+        categoria: 'cuencos',
         stock: 10
     },
 
@@ -20,7 +20,7 @@ const productos = [
         nombre: "Cuenco gris",
         imagen: cuencogris,
         precio: 2000,
-        categoria: 'cuenco',
+        categoria: 'cuencos',
         stock: 10
     },
 
@@ -29,7 +29,7 @@ const productos = [
         nombre: "Bowl gris",
         imagen: bowlgris,
         precio: 1300,
-        categoria: 'bowl',
+        categoria: 'bowls',
         stock: 10
     },
 
@@ -38,7 +38,7 @@ const productos = [
         nombre: "Bowl azul",
         imagen: bowlazul,
         precio: 1300,
-        categoria: 'bowl',
+        categoria: 'bowls',
         stock: 10
     },
 
@@ -47,7 +47,7 @@ const productos = [
         nombre: "Taza blanca",
         imagen: tazablanca,
         precio: 700,
-        categoria: 'taza',
+        categoria: 'tazas',
         stock: 10
     },
 
@@ -56,7 +56,7 @@ const productos = [
         nombre: "Mate gris",
         imagen: mategris,
         precio: 800,
-        categoria: 'mate',
+        categoria: 'mates',
         stock: 10
     }  
 ];
