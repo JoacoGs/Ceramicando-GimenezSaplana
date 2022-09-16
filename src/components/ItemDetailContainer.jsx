@@ -30,6 +30,7 @@ const ItemDetailContainer = () => {
             }) */
    
     return (
+        item &&
         <div style={{minHeight: '70vh'}}>
             <ItemDetail item={item} />
         </div>

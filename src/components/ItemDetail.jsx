@@ -2,7 +2,10 @@ import React from 'react';
 import Card from 'react-bootstrap/Card';
 import ItemCount from './ItemCount';
 
-const ItemDetail = ({ id, nombre, imagen, precio }) => {
+const ItemDetail = ({ item }) => {
+
+    const {id, nombre, imagen,precio} = item
+
     return (
         <div className="col-md-4 py-3">
             <Card style={{ width: '18rem' }}>
