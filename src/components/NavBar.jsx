@@ -16,7 +16,7 @@ function BasicNavBar() {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
-              <Nav.Link href="/inicio">Incio</Nav.Link>
+              <Nav.Link href="/productos">Incio</Nav.Link>
               <Nav.Link href="#link">Contacto</Nav.Link>
               <NavDropdown title="Vajilla" id="basic-nav-dropdown">
                 <NavDropdown.Item href="/productos/bowls">Bowls</NavDropdown.Item>
