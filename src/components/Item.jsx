@@ -15,7 +15,7 @@ const Item = ({id, nombre, imagen, precio}) => {
             <Card.Title className="text-center"><b>{nombre}</b></Card.Title>
             <Card.Text className="text-center"> ${precio}</Card.Text>
             </Card.Body>
-            <ItemCount stock={10} initial={1} onAdd={0} />
+            {/* <ItemCount stock={10} initial={1} onAdd={0} /> */}
             </Card>
         </div>
     )
