@@ -1,9 +1,13 @@
-import React from 'react';
-import { useState } from 'react';
+import React, { useState, useContext} from 'react';
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
+import Provider from "./components/Context";
+import { CartContext } from './Context';
 
 const ItemCount = ({stock, initial, onAdd}) => {
+    const CartContext = useContext(CartContext);
+
+
     const [cantidad, setCantidad] = useState(initial);
     const [itemStock, setItemStock] = useState(stock);
     const [itemAdd, setItemAdd] = useState(onAdd);
