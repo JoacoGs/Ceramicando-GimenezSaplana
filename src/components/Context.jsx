@@ -23,8 +23,12 @@ const Provider = ({children}) => {
         return cart.some(item => item.id === id);
     }
 
+    const cartTotal = () => {
+        return cart.reduce((total, item) => total+=item.cantidad, 0);
+    }
+
     return (
-        <CartContext.Provider value={{cart, addItem, clear, isInCart}}>
+        <CartContext.Provider value={{cart, addItem, clear, cartTotal}}>
             {children}
         </CartContext.Provider>
     )

@@ -1,35 +1,35 @@
-import React, { useState, useContext} from 'react';
+import React, { useState, useEffect} from 'react';
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
-import Provider from "./components/Context";
-import { CartContext } from './Context';
 
-const ItemCount = ({stock, initial, onAdd}) => {
-    const CartContext = useContext(CartContext);
-
-
-    const [cantidad, setCantidad] = useState(initial);
+const ItemCount = ({initial, stock, onAdd}) => {
+    const [counter, setCounter] = useState(initial);
     const [itemStock, setItemStock] = useState(stock);
-    const [itemAdd, setItemAdd] = useState(onAdd);
 
     const decrementarCantidad = (valor) => {
             if (valor > 0) {
-                setCantidad (valor);
+                setCounter (valor);
             }
         }
 
         const incrementarCantidad = (valor) => {
             if (valor <= itemStock) {
-                setCantidad (valor);
+                setCounter (valor);
             }
         }
 
         const agregarProductos = () => {
-            if (cantidad <= itemStock) {   
-                setItemStock(itemStock - cantidad);
-                setItemAdd(itemAdd + cantidad);
+            if (counter <= itemStock) { 
+                onAdd(counter);  
+                setItemStock(itemStock - counter);
+                setCounter(itemStock - counter);
             }
         }
+
+        useEffect(() => {
+            setItemStock(stock);
+        }, [stock]);
+
 
     return (
         <div className="container py-2">
@@ -37,14 +37,13 @@ const ItemCount = ({stock, initial, onAdd}) => {
                 <div className="col-md-12">
                     <p className="text-center"></p>
                     <InputGroup>
-                    <input type="button" className="btn btn-secondary" value="-" onClick={() => {decrementarCantidad (cantidad - 1)}} />
-                        <Form.Control type="text" value={cantidad} onChange={()=> {}} />
-                        <input type="button" className="btn btn-secondary" value="+" onClick={() => {incrementarCantidad (cantidad + 1)}} />
+                    <input type="button" className="btn btn-secondary" value="-" onClick={() => {decrementarCantidad (counter - 1)}} />
+                        <Form.Control type="text" value={counter} onChange={()=> {}} />
+                        <input type="button" className="btn btn-secondary" value="+" onClick={() => {incrementarCantidad (counter + 1)}} />
                     </InputGroup>
                     <div className="d-grid gap-2 pt-3">
                         <input type="button" className="btn btn-secondary" value="Agregar" onClick={() => {agregarProductos ()}} />
                     </div>
-                    <p>Cantidad: {itemAdd}</p>
                 </div>   
             </div>     
         </div>   
