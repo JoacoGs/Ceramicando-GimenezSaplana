@@ -24,7 +24,7 @@ const ItemDetail = ({ item }) => {
                 <Card.Title className="text-center"><b>{nombre}</b></Card.  Title>
                 <Card.Text className="text-center"> ${precio}</Card.Text>
                 </Card.Body> Lorem, ipsum dolor sit amet consectetur    adipisicing elit. Earum dolorem soluta ratione quod in fugit   repudiandae inventore eveniet eius.
-                {counter === 0 ? <ItemCount stock={stock} initial={1} onAdd=    {onAdd} /> : <Link to={"/cart"} className="btn">Finalizar mi Compra</Link>}
+                {counter === 0 ? <ItemCount stock={stock} initial={1} onAdd=    {onAdd} /> : <Link to="/cart" className="btn">Finalizar mi Compra</Link>}
                 </Card>
             </div>
         </div>
