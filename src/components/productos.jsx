@@ -16,7 +16,7 @@ const productos = [
     },
 
     {
-        id:2,
+        id: 2,
         nombre: "Cuenco gris",
         imagen: cuencogris,
         precio: 2000,

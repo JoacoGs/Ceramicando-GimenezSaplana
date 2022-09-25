@@ -1,16 +1,30 @@
 import React, { useEffect, useState } from "react";
 import ItemList from "./ItemList";
 import { useParams } from "react-router-dom";
-import { customFetch } from "./customFetch";
+import { getFirestore, collection, getDocs, query, where } from "firebase/firestore";
+import Loading from "./loading";
 
 const ItemListContainer = (props) => {
     const [items, setItems] = useState([]);
-
-    const [productos, setproductos] = useState([])
-
-    const {categoria} = useParams()
+    const {id} = useParams()
+    const [loading, setLoading] = useState(true);
+   /*  const [productos, setproductos] = useState([]) */
+    
 
     useEffect(() => {
+        const db = getFirestore();
+        const itemsCollection = collection(db, "items");
+        const queryItems = id ? query(itemsCollection, where("categoria", "==", id)) : itemsCollection;
+        getDocs(queryItems).then((snapShot) => {
+            if (snapShot.size > 0) {
+                setItems(snapShot.docs.map(item => ({id:item.id, ...item.data()})));
+                setLoading(false);
+            }
+        });
+    }, [id]);
+
+
+/*     useEffect(() => {
 
         if(!categoria){
   
@@ -22,8 +36,8 @@ const ItemListContainer = (props) => {
           })
         }
     },[categoria])
-
-    useEffect(() => {
+ */
+   /*  useEffect(() => {
         const getProductos = () =>
             new Promise ((res, rej) => {
                 setTimeout(() => {
@@ -39,11 +53,11 @@ const ItemListContainer = (props) => {
                 console.log(error);
             }); 
                
-    }, [productos]);
+    }, [productos]); */
 
     return (
         <div className="container">
-            <ItemList items={items} />
+             {loading ? <Loading /> : <ItemList items={items} />}  
         </div>
     );
 };
