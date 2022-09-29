@@ -4,11 +4,11 @@ import { useParams } from "react-router-dom";
 import { getFirestore, collection, getDocs, query, where } from "firebase/firestore";
 import Loading from "./loading";
 
-const ItemListContainer = (props) => {
+const ItemListContainer = () => {
+    const {id} = useParams();
     const [items, setItems] = useState([]);
-    const {id} = useParams()
-    const [loading, setLoading] = useState(true);
-   /*  const [productos, setproductos] = useState([]) */
+    const [loading, setLoading] = useState(true);   
+   
     
 
     useEffect(() => {
@@ -23,37 +23,6 @@ const ItemListContainer = (props) => {
         });
     }, [id]);
 
-
-/*     useEffect(() => {
-
-        if(!categoria){
-  
-          customFetch().then(response => {
-            setproductos(response)})
-        }else {
-          customFetch().then(r => {
-            setproductos(r.filter(st => st.categoria === categoria))
-          })
-        }
-    },[categoria])
- */
-   /*  useEffect(() => {
-        const getProductos = () =>
-            new Promise ((res, rej) => {
-                setTimeout(() => {
-                    res(productos);
-                }, 0);
-            });
-     
-        getProductos()
-            .then((data) => {
-                setItems(data);
-            })
-            .catch((error) => {
-                console.log(error);
-            }); 
-               
-    }, [productos]); */
 
     return (
         <div className="container">

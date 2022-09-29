@@ -15,9 +15,9 @@ const Cart = () => {
                     <tbody>
                         <tr>
                             <td colSpan={"5"} className="text-end">
-                                <Link onClick={() => {clear()}}>
+                                <div onClick={() => {clear()}}>
                                     <button className="btn fondo_rojo" title="Vaciar Carrito">Vaciar Carrito <img src={trash} alt="Vaciar Carrito" width="16" /></button>
-                                </Link>
+                                </div>
                             </td>
                         </tr>
                         {cart.map(item => (
@@ -27,7 +27,7 @@ const Cart = () => {
                                 <td className="text-end align-middle">{item.cantidad} x ${item.precio}</td>
                                 <td className="text-end align-middle">${item.cantidad * item.precio}</td>
                                 <td className="text-end align-middle">
-                                    <Link onClick={() => {removeItem(item.id)}}><img src={trash} alt="Eliminar Producto" title="Eliminar Producto" width="24" /></Link>
+                                    <div onClick={() => {removeItem(item.id)}}><img src={trash} alt="Eliminar Producto" title="Eliminar Producto" width="24" /></div>
                                 </td>
                             </tr>
                         ))}

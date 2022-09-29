@@ -1,21 +1,19 @@
 import React from "react";
 import Card from 'react-bootstrap/Card';
-import ItemCount from "./ItemCount";
 import { Link } from "react-router-dom";
 
 
-const Item = ({id, nombre, imagen, precio}) => {
+const Item = ({item}) => {
     return (
         <div className="col-md-4 py-3">
             <Card style={{ width: '18rem' }}>
-            <Link to={`/producto/${id}`} className='userLink' >
-            <Card.Img variant="top" src={imagen} alt={nombre} />
+            <Link to={"/item/" + item.id} className='userLink' >
+            <Card.Img variant="top" src={"../images/" + item.imagen} alt={item.nombre} />
             </Link>
             <Card.Body>
-            <Card.Title className="text-center"><b>{nombre}</b></Card.Title>
-            <Card.Text className="text-center"> ${precio}</Card.Text>
+            <Card.Title className="text-center"><b>{item.nombre}</b></Card.Title>
+            <Card.Text className="text-center">${item.precio}</Card.Text>
             </Card.Body>
-            {/* <ItemCount stock={10} initial={1} onAdd={0} /> */}
             </Card>
         </div>
     )

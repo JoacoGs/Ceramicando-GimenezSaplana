@@ -11,7 +11,7 @@ const Provider = ({children}) => {
             cart[cart.indexOf(producto)].cantidad += cantidad;
             setCart([...cart]);
         } else {
-            setCart([...cart, {...item, cantidad:cantidad}]);
+            setCart([...cart, {...item, cantidad: cantidad}]);
         }
     }
 
