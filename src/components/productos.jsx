@@ -5,7 +5,7 @@ import bowlazul from "./images/bowlazul.jpg";
 import tazablanca from "./images/taza.jpg";
 import mategris from "./images/mate.jpg";
 
-const productos = [
+const items = [
     {
         id: 1,
         nombre: "Cuenco blanco",
@@ -61,4 +61,4 @@ const productos = [
     }  
 ];
 
-export default productos;
+export default items;
