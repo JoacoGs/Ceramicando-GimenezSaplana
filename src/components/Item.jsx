@@ -7,7 +7,7 @@ const Item = ({item}) => {
     return (
         <div className="col-md-4 py-3">
             <Card style={{ width: '18rem' }}>
-            <Link to={"/items/" + item.id} className='userLink' >
+            <Link to={"/producto/" + item.id} className='userLink' >
             <Card.Img variant="top" src={"../images/" + item.imagen} alt={item.nombre} />
             </Link>
             <Card.Body>

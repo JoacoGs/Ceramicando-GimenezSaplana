@@ -5,7 +5,7 @@ import { getFirestore, collection, getDocs, query, where } from "firebase/firest
 import Loading from "./loading";
 
 const ItemListContainer = () => {
-    const {id} = useParams();
+    const {categoria} = useParams();
     const [items, setItems] = useState([]);
     const [loading, setLoading] = useState(true);   
    
@@ -14,14 +14,14 @@ const ItemListContainer = () => {
     useEffect(() => {
         const db = getFirestore();
         const itemsCollection = collection(db, "items");
-        const queryItems = id ? query(itemsCollection, where("categoría", "==", id)) : itemsCollection;
+        const queryItems = categoria ? query(itemsCollection, where("categoria", "==", categoria)) : itemsCollection;
         getDocs(queryItems).then((snapShot) => {
             if (snapShot.size > 0) {
                 setItems(snapShot.docs.map(item => ({id:item.id, ...item.data()})));
                 setLoading(false);
             }
         });
-    }, [id]);
+    }, [categoria]);
 
 
     return (
