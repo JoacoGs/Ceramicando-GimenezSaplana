@@ -1,0 +1,28 @@
+.footer {
+    background-color:lightblue;
+    color: rgb(20, 20, 20);
+    font-family: "PT Sans Narrow", sans-serif;
+    font-size: 20px;
+    margin-top: 5rem;
+}
+
+.espaciadofooter{
+    display: flex;
+    flex-direction: column;
+}
+
+.footimg {
+    margin-top: 1rem;
+    background-color: none;
+}
+  
+.logofooter {
+    width: 35%;
+    margin-left: 3rem;
+    border-radius: 60px;
+}
+
+.texto {
+    margin-top: 1rem;
+    font-size: 18px;
+}   
