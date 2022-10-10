@@ -19,7 +19,7 @@ const ItemDetail = ({ item }) => {
                 <Card style={{ width: '18rem' }}>
                 <Card.Img variant="top" src={"../images/" + item.imagen} alt={item.nombre}/>
                 <Card.Body> 
-                <Card.Title className="text-center"><b>{item.nombre}</b></Card.  Title>
+                <Card.Title className="text-center"><b>{item.nombre}</b></Card.Title>
                 <Card.Text className="text-center"> ${item.precio}</Card.Text>
                 </Card.Body> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Earum dolorem soluta ratione quod in fugit repudiandae inventore eveniet eius.
                 {counter === 0 ? (
