@@ -6,11 +6,15 @@ function Contacto () {
     <div className="container-fluid">
         <div className="row">
             <div className="col-md-4 article">
-                <p className="p"><u>Whatsapp:</u> 54 1160023620 <br>
-                <u>Gmail:</u> msaplana@gmail.com <br>
-                <u>Facebook:</u> CeramicandoMaruSaplana </br> 
-                <u>Instagram:</u> CeramicandoMaruSaplana </br> 
-                <u>Horarios de atencion:</u> Lu a Vi 09hs a 20hs Sa 10hs a 16hs </p>
+                <div className="row p">
+                <p><u>Whatsapp:</u> 54 1160023620 </p>
+                <p><u>Gmail:</u> msaplana@gmail.com </p> 
+                <p><u>Facebook:</u> CeramicandoMaruSaplana </p> 
+                <p><u>Instagram:</u> CeramicandoMaruSaplana </p> 
+                <p><u>Horarios de atencion:</u> Lu a Vi 09hs a 20hs Sa 10hs a 16hs </p>  
+                </div>
+            </div>
+            <div className="col-md-3"> 
             </div>
             <div className="col-md-4">
                 <h2 id="zonae" >Zona de envios:</h2>
